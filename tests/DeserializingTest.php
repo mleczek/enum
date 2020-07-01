@@ -28,6 +28,12 @@ class DeserializingTest extends TestCase
         $this->assertNotEquals(StatusEnum::active(), StatusEnum::parse('I'));
     }
 
+    public function testInvalidStringValueExceptionMessage()
+    {
+        $this->expectExceptionMessage("Cannot parse the 'InvalidEnumValue' value to the 'Mleczek\Enum\Tests\Enums\StatusEnum' enum, expected one of: A, I.");
+        $this->assertNotEquals(StatusEnum::active(), StatusEnum::parse('InvalidEnumValue'));
+    }
+
     public function testValidIntValue()
     {
         $this->assertSame(RankEnum::silver(), RankEnum::parse(0));

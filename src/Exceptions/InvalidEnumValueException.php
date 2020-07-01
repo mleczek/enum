@@ -34,6 +34,6 @@ class InvalidEnumValueException extends Exception
         );
 
         $availableStr = implode(', ', $enumValues);
-        parent::__construct("Cannot map the '$value' to the '$enumClass' enum, use one of: $availableStr.", 2, null);
+        parent::__construct("Cannot parse the '$value' value to the '$enumClass' enum, expected one of: $availableStr.", 2, null);
     }
 }
