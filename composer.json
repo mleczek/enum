@@ -1,0 +1,33 @@
+{
+  "name": "mleczek/enum",
+  "description": "Enums in PHP",
+  "type": "library",
+  "keywords": [
+    "enum",
+    "SplEnum"
+  ],
+  "homepage": "https://github.com/mleczek/enum",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Wojciech Mleczek",
+      "email": "mleczek.wojtek@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mleczek\\Enum\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mleczek\\Enum\\Tests\\": "tests/"
+    }
+  }
+}
