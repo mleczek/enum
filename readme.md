@@ -31,6 +31,8 @@ StatusEnum::inactive(); // StatusEnum
 StatusEnum::all(); // StatusEnum[]
 ```
 
+The `all()` method returns enums that are sorted by value (case-insensitive for strings).
+
 ## Comparing
 
 The same enum instance is always returned, don't worry while using [*identical*](https://www.php.net/manual/en/language.operators.comparison.php) comparision.
@@ -45,7 +47,7 @@ StatusEnum::active() === StatusEnum::inactive(); // false
 Serialize...
 
 ```php
-$serialized = $enum->getValue();
+$value = $enum->getValue();
 ```
 
 ## Deserializing
@@ -53,8 +55,8 @@ $serialized = $enum->getValue();
 ...and deserialize.
 
 ```php
-StatusEnum::parse($serialized); // StatusEnum
-StatusEnum::parseOrDefault($serialized, StatusEnum::inactive()); // StatusEnum
+StatusEnum::parse($value); // StatusEnum
+StatusEnum::parseOrDefault($value, StatusEnum::inactive()); // StatusEnum
 ```
 
 **Note:** Implementation accept any type as enum value and use [*identical*](https://www.php.net/manual/en/language.operators.comparison.php) comparision. For complex types (which are not recommended) manually [`serialize`](https://www.php.net/manual/en/function.serialize.php) and [`unserialize`](https://www.php.net/manual/en/function.unserialize.php) values.

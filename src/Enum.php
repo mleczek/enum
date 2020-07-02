@@ -97,8 +97,12 @@ abstract class Enum
                 return $className::$methodName();
             }, $valueMethods);
 
-            // Sort alphabetically (case-insensitive) by value.
+            // Sort by value (case-insensitive for strings).
             usort($enums, function (self $a, self $b) {
+                if (is_string($a->getValue()) && is_string($b->getValue())) {
+                    return strcasecmp($a, $b);
+                }
+
                 if ($a->getValue() === $b->getValue()) {
                     return 0;
                 }
