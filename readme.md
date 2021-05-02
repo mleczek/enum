@@ -1,6 +1,8 @@
 # PHP Enum
 
-This package was created to provide simple way to create typed enums in PHP with IDE autocompletion. The package is an alternative for `SplEnum` extension.
+This package was created to provide simple way to create typed enums in PHP with IDE autocompletion. 
+
+The package is an alternative for `SplEnum` extension (PHP < 8.1) or [native enum](https://wiki.php.net/rfc/enumerations) (PHP 8.1+). Why `mleczek/enum` over `SplEnum`? Much easier to install. Why `mleczek/enum` over native enum? Additional name/description field over traiditional key-value pair. 
 
 ## Installation
 
